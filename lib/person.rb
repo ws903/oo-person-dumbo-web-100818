@@ -31,19 +31,11 @@ class Person
 	end
 
 	def happy?
-		if @happiness > 7
-			true
-		else
-			false
-		end
+		@happiness > 7
 	end
 
 	def clean?
-		if @hygiene > 7
-			true
-		else
-			false
-		end
+		@hygiene > 7
 	end
 
 	def get_paid(paycheck)
@@ -52,23 +44,19 @@ class Person
 	end
 
 	def take_bath
-		@hygiene += 4
-		self.hygiene=(@hygiene)
+		self.hygiene=(@hygiene += 4)
 		return "♪ Rub-a-dub just relaxing in the tub ♫"
 	end
 
 	def work_out
-		@hygiene -= 3
-		@happiness += 2
-		self.hygiene=(@hygiene)
-		self.happiness=(@happiness)
+		self.hygiene=(@hygiene -= 3)
+		self.happiness=(@happiness += 2)
 		return "♪ another one bites the dust ♫"
 	end
 
 	def call_friend(friend)
-		@happiness += 3
+		self.happiness=(@happiness += 3)
 		friend.happiness += 3
-		self.happiness=(@happiness)
 		return "Hi #{friend.name}! It's #{@name}. How are you?"
 	end
 
