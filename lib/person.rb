@@ -1,5 +1,5 @@
 class Person
-	attr_reader(:name)
+	attr_reader(:name, :happiness, :hygiene)
 	attr_accessor(:bank_account)
 	attr_writer(:happiness)
 
@@ -10,16 +10,6 @@ class Person
 		@hygiene = 8
 	end
 
-	def happiness
-		if @happiness > 10
-			@happiness = 10
-		elsif @happiness < 0
-			@happiness = 0
-		else
-			@happiness = @happiness
-		end
-	end
-
 	def happiness=(user_num)
 		if user_num > 10
 			@happiness = 10
@@ -27,16 +17,6 @@ class Person
 			@happiness = 0
 		else
 			@happiness = user_num
-		end
-	end
-
-	def hygiene
-		if @hygiene > 10
-			@hygiene = 10
-		elsif @hygiene < 0
-			@hygiene = 0
-		else
-			@hygiene = @hygiene
 		end
 	end
 
